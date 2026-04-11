@@ -1,13 +1,14 @@
 ﻿using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using StockyApi.Models;
-using StockyApi.Services;
+using StockyApi.Services.Products;
 
 namespace StockyApi.Controllers
 {
     [Route("api/[controller]")]
     [ApiController]
     public class ProductController : ControllerBase
+
     {
         private readonly IProductInterface _productService;
         public ProductController(IProductInterface productService)

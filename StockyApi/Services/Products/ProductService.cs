@@ -3,7 +3,7 @@ using Microsoft.EntityFrameworkCore;
 using StockyApi.DataContext;
 
 
-namespace StockyApi.Services
+namespace StockyApi.Services.Products
 {
     public class ProductService : IProductInterface
     {
@@ -112,6 +112,12 @@ namespace StockyApi.Services
             try
             {
                 var _total = await _db.Products.CountAsync();
+
+                if (_total == 1)
+                {
+                    response.Sucesso = false;
+                    response.Mensagem = "Nenhum produto encontrado.";
+                }
 
                 var _products = await _db.Products
                     .Include(p => p.Category)

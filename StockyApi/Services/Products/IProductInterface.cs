@@ -1,6 +1,6 @@
 ﻿using StockyApi.Models;
 
-namespace StockyApi.Services
+namespace StockyApi.Services.Products
 {
     public interface IProductInterface
     {

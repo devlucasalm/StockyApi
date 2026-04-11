@@ -13,7 +13,6 @@ namespace StockyApi.Models
         public DateTime DataCriacao { get; set; }
         public DateTime DataAtualizacao { get; set; } = DateTime.Now.ToLocalTime();
 
-        public List<ProductsModel> Products { get; set; }
 
     }
 }
