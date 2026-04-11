@@ -23,10 +23,12 @@ namespace StockyApi.Controllers
         }
 
         [HttpPost]
-        public async Task<ActionResult<AppResponse<ProductsModel>>> CreateProduct(ProductsModel product)
+        public async Task<ActionResult<AppResponse<ProductsModel>>> CreateProduct([FromForm] ProductCreateDto dto)
         {
-            return Ok(await _productService.CreateProduct(product));
+            var baseUrl = $"{Request.Scheme}://{Request.Host}";
+            return Ok(await _productService.CreateProduct(dto, baseUrl));
         }
+
         [HttpDelete]
         public async Task<ActionResult<AppResponse<ProductsModel>>> DeleteProduct(Guid id)
         {
@@ -40,9 +42,10 @@ namespace StockyApi.Controllers
         }
 
         [HttpPut]
-        public async Task<ActionResult<AppResponse<ProductsModel>>> UpdateProduct(ProductsModel productUpdate)
+        public async Task<ActionResult<AppResponse<ProductsModel>>> UpdateProduct([FromForm] ProductUpdateDto dto)
         {
-            return Ok(await _productService.UpdateProduct(productUpdate));
+            var baseUrl = $"{Request.Scheme}://{Request.Host}";
+            return Ok(await _productService.UpdateProduct(dto, baseUrl));
         }
     }
 }
