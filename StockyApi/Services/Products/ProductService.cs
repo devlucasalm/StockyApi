@@ -187,6 +187,7 @@ namespace StockyApi.Services.Products
                 product.Nome = dto.Nome;
                 product.Descricao = dto.Descricao;
                 product.Preco = dto.Preco;
+                product.Ativo = dto.Ativo;
                 product.Quantidade = dto.Quantidade;
                 product.CategoryId = dto.CategoryId;
                 product.DataAtualizacao = DateTime.UtcNow;

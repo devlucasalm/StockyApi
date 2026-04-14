@@ -21,3 +21,4 @@ namespace StockyApi.Models
         public Guid? CategoryId  { get; set; }
     }
 }
+
