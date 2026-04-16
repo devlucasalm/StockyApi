@@ -3,6 +3,7 @@ using Microsoft.EntityFrameworkCore;
 using Microsoft.IdentityModel.Tokens;
 using StockyApi.DataContext;
 using StockyApi.Services.Category;
+using StockyApi.Services.Dashboard;
 using StockyApi.Services.Products;
 using System.Text;
 
@@ -16,6 +17,7 @@ builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
 builder.Services.AddScoped<IProductInterface, ProductService>();
 builder.Services.AddScoped<ICategoryInterface, CategoryService>();
+builder.Services.AddScoped<IDashboardInterface, DashboardService>();
 
 builder.Services.AddDbContext<ApplicationDbContext>(options =>
 {
